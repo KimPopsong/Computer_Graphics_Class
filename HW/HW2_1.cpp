@@ -64,7 +64,7 @@ void myDisplay(void)
 void main(int argc, char** argv)
 {
 	glutInitWindowSize(640, 640);
-	glutCreateWindow("my first attempt");
+	glutCreateWindow("201801527_DS KIM");
 	glutDisplayFunc(myDisplay);
 	myInit();
 	glutMainLoop();

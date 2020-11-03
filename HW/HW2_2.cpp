@@ -4,7 +4,7 @@
 #include <GL/glut.h>
 #include <fstream>
 
-void drawPolyLineFile(const char* fileName) 
+void drawPolyLineFile(const char* fileName)
 {
 	std::ifstream inStream;
 
@@ -43,23 +43,23 @@ void setWindow(float left, float right, int bottom, int top)
 	glOrtho(left, right, bottom, top, -10, 100);
 }
 
-void render() 
+void render()
 {
 	glClear(GL_COLOR_BUFFER_BIT);
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
-	setWindow(-640, 640, -640, 640);
+	setWindow(-1280, 1280, -1280, 1280);
 
-	glTranslatef(-120.0, 360, 0.0);
 	glScalef(0.5, 0.5, 0.5);
-	drawPolyLineFile("dino.dat");
 
-	for (int i = 0; i < 11; i++)
+	glPushMatrix();
+	for (int i = 0; i < 12; i++)
 	{
 		glTranslatef(-320.0, -180.0, 0.0);
 		glRotatef(30.0, 0.0, 0.0, 1.0);
 		drawPolyLineFile("dino.dat");
 	}
+	glPopMatrix();
 
 	glFlush();
 }

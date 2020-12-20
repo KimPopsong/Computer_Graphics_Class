@@ -1,4 +1,4 @@
-﻿#include <GL/glut.h>
+#include <GL/glut.h>
 
 int t = 0;
 static GLfloat yPos = 0;
@@ -66,11 +66,12 @@ void Draw()
 {
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     glMatrixMode(GL_MODELVIEW);
-    glEnable(GL_NORMALIZE);
+    //glEnable(GL_NORMALIZE);
     glLoadIdentity();
 
     glPushMatrix();
     glBegin(GL_POLYGON);
+    glNormal3f(0, 1, 1);
     glColor3f(0.5, 0.5, 0.5);
     glVertex3f(10, 30, -90);
     glVertex3f(40, 30, -90);
